@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-analyzer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-analyzer
+  template:
+    metadata:
+      labels:
+        app: log-analyzer
+    spec:
+      containers:
+        - name: log-analyzer
+          image: log-analyzer:2.0
+          imagePullPolicy: IfNotPresent
+
+          envFrom:
+            - configMapRef:
+                name: log-analyzer-config
+
+          volumeMounts:
+            - name: app-logs
+              mountPath: /var/log/app
+
+          resources:
+            requests:
+              cpu: "50m"
+              memory: "64Mi"
+            limits:
+              cpu: "200m"
+              memory: "128Mi"
+
+      volumes:
+        - name: app-logs
+          hostPath:
+            path: /tmp/app-logs
+            type: DirectoryOrCreate

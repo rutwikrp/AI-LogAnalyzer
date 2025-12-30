@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: log-analyzer-config
+data:
+  LOG_FILE_PATH: "/var/log/app/app.log"
+  WINDOW_SIZE_SECONDS: "30"
+  BASELINE_WINDOWS: "5"
+  ERROR_SPIKE_MULTIPLIER: "2.0"
+  ALERT_COOLDOWN_SECONDS: "120"

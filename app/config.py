@@ -1,0 +1,12 @@
+import os
+
+LOG_FILE_PATH = os.getenv("LOG_FILE_PATH", "/var/logs/app.log")
+
+WINDOW_SIZE_SECONDS = int(os.getenv("WINDOW_SIZE_SECONDS", "60"))
+BASELINE_WINDOWS = int(os.getenv("BASELINE_WINDOWS", "10"))
+
+ERROR_SPIKE_MULTIPLIER = float(os.getenv("ERROR_SPIKE_MULTIPLIER", "2.0"))
+
+ALERT_COOLDOWN_SECONDS = int(os.getenv("ALERT_COOLDOWN_SECONDS", "600"))
+
+ALERT_WEBHOOK_URL = os.getenv("ALERT_WEBHOOK_URL")
