@@ -22,7 +22,7 @@ This project addresses that problem by:
 - Triggering alerts only when anomalies persist, not on single events
 
 ## High-Level Architecture
-
+![Architecture](arc.svg)
 - No request/response API
 
 - No manual triggering
