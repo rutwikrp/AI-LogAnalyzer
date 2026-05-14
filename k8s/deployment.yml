@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: log-analyzer
-          image: log-analyzer:2.0
+          image: log-analyzer:1.1
           imagePullPolicy: IfNotPresent
 
           envFrom:
