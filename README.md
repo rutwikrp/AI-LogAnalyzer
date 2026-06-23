@@ -166,14 +166,3 @@ echo "ERROR DB failure" >> /tmp/app-logs/app.log
 
 - Operational reliability and alert hygiene
 
-## Future Improvements
-
-- Replace print statements with structured logging
-
-- Add HTTP /health endpoint
-
-- Support multiple log sources
-
-- Externalize state (Redis) for HA deployments
-
-- Integrate with Prometheus metrics
